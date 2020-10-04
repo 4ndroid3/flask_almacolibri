@@ -1,0 +1,14 @@
+html * {
+    font-family: sans-serif;
+}
+img {
+    max-width: 48px;
+}
+header {
+    background:#2c3e50;
+    color:#fff;
+}
+aside {
+    background:#c0392b;
+    color:#fff;
+}

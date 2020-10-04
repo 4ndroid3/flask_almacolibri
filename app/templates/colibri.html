@@ -1,8 +1,42 @@
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h3> {{ frstmsj }}</h3>
-</body>
-</html>
+{% extends 'base.html'%}
+
+    {% block title %}
+        {{ super() }}
+        Bienvenido
+    {% endblock %}
+
+{% block header %}
+    {{ username }}
+{% endblock %}
+
+{% block content %}
+    {% if username %}
+        <h1>Hola {{ username | capitalize}}, bienvenido a {{ frstmsj }}</h1> <!-- si le agrego capitalize me pone la primeraletra en mayus-->
+    {% endif %}
+
+    <h3>Productos</h3>
+    <img src="{{ url_for('static',filename='images/coco_rallado.png') }}"
+                    style="max-width: 78px"
+                    alt="Coco rallado">
+
+    <img src="{{ url_for('static',filename='images/manies.png') }}"
+                    style="max-width: 78px"
+                    alt="manies">
+    <img src="{{ url_for('static',filename='images/mix_semillas.png') }}"
+                    style="max-width: 78px"
+                    alt="mix">
+    <img src="{{ url_for('static',filename='images/nuez.png') }}"
+                    style="max-width: 78px"
+                    alt="nuez">
+    <img src="{{ url_for('static',filename='images/pimenton.png') }}"
+                    style="max-width: 78px"
+                    alt="pimenton">
+    <img src="{{ url_for('static',filename='images/sal_himalaya.png') }}"
+                    style="max-width: 78px"
+                    alt="sal_himalaya">
+    <ul class="list-group">
+        {% for product in products %}
+            <li>{{ product }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

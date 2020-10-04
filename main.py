@@ -1,8 +1,8 @@
-from flask import Flask, make_response, request, redirect, render_template
+from flask import make_response, request, redirect, render_template
 
 from app import create_app
 
-app = Flask(__name__)
+app = create_app()
 
 
 @app.route('/')
@@ -14,9 +14,13 @@ def index():
 
 @app.route('/colibri', methods=['GET', 'POST'])
 def colibri():
-    frstmsj = 'tangalanga'
+    frstmsj = 'Alma de Colibri'
+    username = 'andrés'
+    products = ['Manies', 'Nuez', 'Mix Semillas', 'Pimentón', 'Sal del Himalaya', 'Coco Rallado']
     context = {
-        'frstmsj': frstmsj
+        'frstmsj': frstmsj,
+        'username': username,
+        'products': products
     }
 
     return render_template('colibri.html', **context)

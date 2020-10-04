@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'bootstrap/base.html' %}
+{% block header %}
+    {{ super() }}
 
-</body>
-</html>
+    <title>
+        {% block title %}Alma de Colibrí | {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+        <footer style="background-color:#EFC4BB">
+            <p align="center">Alma de Colibrí 2020 | Venta de productos naturales, semillas y frutos secos</p>
+            <p align="center">Instagram: @almadecolibrii </p>
+        </footer>
+    {% endblock %}
+
+    {% block scripts %}
+        {{ super() }}
+    {% endblock %}
+
+{% endblock %}
+
