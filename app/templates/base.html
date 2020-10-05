@@ -1,30 +1,39 @@
 {% extends 'bootstrap/base.html' %}
+
 {% block header %}
     {{ super() }}
-
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>
         {% block title %}Alma de Colibrí | {% endblock %}
     </title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 {% endblock %}
 
 {% block body %}
-    {% block navbar %}
-        {% include 'navbar.html' %}
-    {% endblock %}
-
-    {% block content %}{% endblock %}
-
-    {% block footer %}
-        <footer style="background-color:#EFC4BB">
-            <p align="center">Alma de Colibrí 2020 | Venta de productos naturales, semillas y frutos secos</p>
-            <p align="center">Instagram: @almadecolibrii </p>
-        </footer>
-    {% endblock %}
-
-    {% block scripts %}
-        {{ super() }}
-    {% endblock %}
-
+    <div class="container-fluid">
+        <div class="navbar navbar-light" style="background-color: #2bbba867;">
+        
+            {% block navbar %}
+                {% include 'navbar.html' %}
+            {% endblock %}
+         
+            {% block content %}{% endblock %}
+        
+            {% block footer %}
+            <footer style="background-color:#225a5367">
+                <p align="center">Alma de Colibrí 2020 | Venta de productos naturales, semillas y frutos secos</p>
+                <p align="center">Instagram: @almadecolibrii </p>
+            </footer>
+            {% endblock %}
+        
+        
+    
+            {% block scripts %}
+                {{ super() }}
+            {% endblock %}
+        </div>
+    </div>
 {% endblock %}
-
