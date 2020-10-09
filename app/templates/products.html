@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+
+    {% block title %}
+        {{ super() }}
+        Productos
+    {% endblock %}
+
+{% block content %}
+    <h2>Productos</h3>
+    <img src="{{ url_for('static',filename='images/coco_rallado.png') }}"
+                    style="max-width: 78px"
+                    alt="Coco rallado">
+
+    <img src="{{ url_for('static',filename='images/manies.png') }}"
+                    style="max-width: 78px"
+                    alt="manies">
+    <img src="{{ url_for('static',filename='images/mix_semillas.png') }}"
+                    style="max-width: 78px"
+                    alt="mix">
+    <img src="{{ url_for('static',filename='images/nuez.png') }}"
+                    style="max-width: 78px"
+                    alt="nuez">
+    <img src="{{ url_for('static',filename='images/pimenton.png') }}"
+                    style="max-width: 78px"
+                    alt="pimenton">
+    <img src="{{ url_for('static',filename='images/sal_himalaya.png') }}"
+                    style="max-width: 78px"
+                    alt="sal_himalaya">
+    <dl class="list-group">
+        {% for product in products %}
+            <li>{{ product }}</li>
+        {% endfor %}
+    </dl>
+{% endblock %}

@@ -13,8 +13,8 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container-fluid">
-        <div class="navbar navbar-light" style="background-color: #2bbba867;">
+    <div class="container">
+        <div class="navbar navbar-light" style="background-color: #ffffff;">
         
             {% block navbar %}
                 {% include 'navbar.html' %}
@@ -23,14 +23,14 @@
             {% block content %}{% endblock %}
         
             {% block footer %}
-            <footer style="background-color:#225a5367">
+            <footer style="background-color:#07b4a6ad">
                 <p align="center">Alma de Colibrí 2020 | Venta de productos naturales, semillas y frutos secos</p>
-                <p align="center">Instagram: @almadecolibrii </p>
+                <p align="center">Instagram: 
+                    <a href="https://www.instagram.com/almadecolibrii/" target="_blank">@almadecolibrii</a>
+                </p>
             </footer>
             {% endblock %}
         
-        
-    
             {% block scripts %}
                 {{ super() }}
             {% endblock %}
