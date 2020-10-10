@@ -12,10 +12,8 @@ def index():
 
 @app.route('/colibri', methods=['GET', 'POST'])
 def colibri():
-    frstmsj = 'Alma de Colibri'
     username = 'andrés'
     context = {
-        'frstmsj': frstmsj,
         'username': username
     }
 
